@@ -29,7 +29,7 @@ function newGame() {
     playerPunkte.innerHTML = "";
     dealerCount = 0;
     playerCount = 0;
-    deck = [...newDeck];
+    deck = [...newDeck, ...newDeck, ...newDeck, ...newDeck, ...newDeck, ...newDeck];
     Shuffle(deck);
     draw();
     draw();
@@ -78,7 +78,7 @@ function draw() {
             playerCount++;
         }
     } else {
-        playerCount += werte2.punkte;
+        playerCount += werte2.punkte; 
     }
 
     card2.setAttribute = ("name", werte2.suit + " " + werte2.value);
@@ -122,6 +122,7 @@ function checkWin() {
         modal.showModal();
     }
 }
+
 function checkWinFertig() {
     if (playerCount < 21 && dealerCount < 21) {
         if (playerCount > dealerCount) {
